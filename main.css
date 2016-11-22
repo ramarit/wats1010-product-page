@@ -32,6 +32,8 @@ body, html {
   text-decoration: none;
   background: #00245D;
   margin-top: 20px;
+  float: left !important;
+  margin-left: -30px;
 }
 #nav-list {
   margin-top: 20px;
@@ -51,9 +53,10 @@ body, html {
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
   border: 1px solid #00245D;
 }
+
 .navbar-header button.navbar-toggle {
   clear: both;
-  margin-top: -30px;
+  margin-top: -40px;
 }
 
 #collapsable-nav a span { /* Collapsed nav menu shopping cart glyph */
@@ -510,5 +513,10 @@ hr {
   overflow: auto;
 }
 
+@media (max-width: 767px) {
+  .navbar-header a {
+    margin-left: 20px;
+  }
+}
 
 
