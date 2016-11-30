@@ -617,6 +617,7 @@ hr {
     padding-top: 0px;
     padding-bottom: 75px;
   }
+<<<<<<< HEAD
 
 }
 @media (max-width: 767px) {
@@ -659,6 +660,50 @@ hr {
     margin-top: 190px;
   }
 
+=======
+
+}
+@media (max-width: 767px) {
+  .navbar-header a {
+    margin-left: 20px;
+  }
+
+  .main {
+    background-image: url('assets/images/main_medium.jpg');
+    height: 700px;
+  }
+
+  /* EVERY API ONE PLACE */
+  .main p:nth-child(1){
+    margin-top: 250px;
+  }
+
+  .description {
+    margin-top: 600px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  .browse {
+    background-image: url('assets/images/browse_medium.jpg');
+    height: 700px;
+  }
+}
+
+@media (max-width: 535px) {
+  
+  .main {
+    background-image: url('assets/images/main_small.jpg');
+    height: 500px;
+  }
+
+  /* EVERY API ONE PLACE */
+  .main p:nth-child(1){
+    font-size: 2.2em;
+    margin-top: 190px;
+  }
+
+>>>>>>> master
   .main p:nth-child(2) {
     text-align: center;
   }
@@ -685,6 +730,10 @@ hr {
     font-size: 2em;
     margin-top: 30px;
   }
+<<<<<<< HEAD
 
 }
+=======
+>>>>>>> master
 
+}
