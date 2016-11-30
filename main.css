@@ -32,7 +32,6 @@ body, html {
   text-decoration: none;
   background: #00245D;
   margin-top: 20px;
-  float: left !important;
   margin-left: -30px;
 }
 #nav-list {
@@ -65,6 +64,7 @@ body, html {
     padding-left: 2px;
   }
 
+
 /* main content */
 #main-content {
   margin: 0;
@@ -73,7 +73,7 @@ body, html {
 }
 
 /* Main background image */
-#main-content .container .jumbotron, .container-fluid .jumbotron {
+/*#main-content .container .jumbotron, .container-fluid .jumbotron {
   padding: 0;
   margin: -100px;
   background-image: url('assets/images/main.jpeg');
@@ -83,7 +83,7 @@ body, html {
   width: 150%;
   left: -28%;
   top:0;
-}
+}*/
 
 /* jumbotron */
 .jumbotron {
@@ -91,25 +91,28 @@ body, html {
   position: fixed;
 }
 
-/* main */
 .main {
   position: fixed;
-  width: 500px;
-  height: 200px;
+  z-index: 100;
+  padding: 0;
+  margin: 0;
+  background-image: url('assets/images/main.jpeg');
+  background-size: cover;
+  height: 800px;
   margin: 5% auto;
   left: 0;
   right: 0;
-  z-index: 10;
-  margin-top: 250px;
 }
+
 /* ONE PLACE */
-.main p span {
+.main span {
   font-weight: bold;
   color: white;
 }
 
 /* EVERY API ONE PLACE */
 .main p:nth-child(1){
+  margin-top: 320px;
   font-size: 2.6em;
   text-align: center;
   vertical-align: middle;
@@ -119,16 +122,18 @@ body, html {
 
 /* shop now */
 .main p:nth-child(2){
-  margin-top: 20px;
   font-size: 2.5em;
   text-align: center;
   vertical-align: middle;
   line-height: 30px; 
   color:white;
+  margin-top: 20px;
 }
 
 /* shop now */
 .main p:nth-child(2) a{
+  position: relative;
+  z-index: 1;
   font-size: .7em;
   text-align: center;
   vertical-align: middle;
@@ -278,8 +283,80 @@ body, html {
   text-decoration: none;
 }
 
+
+/* testimonial */
+.testimonial {
+  height: 500px;
+  position: relative;
+  background: white;
+  z-index: 100;
+  color:white;
+  background: rgba(62,168,159,1);
+  background: -moz-linear-gradient(-45deg, rgba(62,168,159,1) 0%, rgba(0,36,93,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(62,168,159,1)), color-stop(100%, rgba(0,36,93,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(62,168,159,1) 0%, rgba(0,36,93,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(62,168,159,1) 0%, rgba(0,36,93,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(62,168,159,1) 0%, rgba(0,36,93,1) 100%);
+  background: linear-gradient(135deg, rgba(62,168,159,1) 0%, rgba(0,36,93,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3ea89f', endColorstr='#00245d', GradientType=1 );
+}
+
+.quote {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.carousel-inner {
+  position: relative;
+  margin-top: 125px; 
+}
+
+.carousel-indicators {
+  position: absolute;
+  margin-top: 200px; 
+}
+
+/*-------------------------------*/
+/*    Carousel Fade Transition   */
+/*-------------------------------*/
+
+#fade-quote-carousel.carousel {
+  padding-bottom: 60px;
+}
+#fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-indicators {
+  bottom: 10px;
+}
+#fade-quote-carousel.carousel .carousel-indicators > li {
+  background-color: #e84a64;
+  border: none;
+}
+
+#fade-quote-carousel blockquote {
+  text-align: center;
+  border: none;
+}
+#fade-quote-carousel .profile-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 100px;
+}
+
+
 /* testimonials */
-#testimonials {
+/*#testimonials {
   position: relative;
   z-index: 100;
   padding: 20px;
@@ -302,12 +379,12 @@ body, html {
 #testimonials p {
   margin: 10px;
   padding: 5px;
-}
+}*/
 
 /* features */
 #features {
   position: relative;
-  z-index: 100;
+  z-index: 200;
   padding: 20px;
   margin-bottom: -30px;
   padding-left: 62px;
@@ -321,7 +398,7 @@ body, html {
   width: 100%;
   margin-bottom: 15px;
   position: relative;
-  border: 2px solid #000;
+  border: 2px solid #060032;
   overflow: hidden;
 }
 
@@ -441,6 +518,8 @@ footer {
 }
 /* bottom copyright text */
 .bottom {
+  position: relative;
+  z-index: 200;
   background-color: #060032;
   color:white;
   text-align: center;
@@ -449,10 +528,30 @@ footer {
 }
 /* end footer */
 
+.text-align-center {
 
+}
+/* horiztonal dividing line */
 hr {
   width: 70%;
 }
+
+.modal-header, h4, .close {
+  background-color: #00245D;
+  color:white !important;
+  text-align: center;
+  font-size: 30px;
+}
+  .modal-footer {
+    background-color: #f9f9f9;
+  }
+
+  /*#myBtn {
+    margin-top: 9px;
+    padding-bottom: 0;
+    vertical-align: middle;
+    padding: 5px;
+  }*/
 
 /* Popup screen */
 .overlay {
@@ -465,7 +564,6 @@ hr {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
-  padding-top: 150px;
   z-index: 99999;
 }
 .overlay:target {
@@ -484,14 +582,15 @@ hr {
 }
 
 .popup h2 {
-  margin-top: 0;
+  margin-top: 100px;
+  margin-bottom: 100px;
   color: #333;
-  font-size: 4em;
+  font-size: 2em;
   text-align: center;
 }
 
 .popup p {
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 60px;
   line-height: 1.2;
 }
@@ -513,10 +612,79 @@ hr {
   overflow: auto;
 }
 
+@media (max-width: 991px ) {
+  .how {
+    padding-top: 0px;
+    padding-bottom: 75px;
+  }
+
+}
 @media (max-width: 767px) {
   .navbar-header a {
     margin-left: 20px;
   }
+
+  .main {
+    background-image: url('assets/images/main_medium.jpg');
+    height: 700px;
+  }
+
+  /* EVERY API ONE PLACE */
+  .main p:nth-child(1){
+    margin-top: 250px;
+  }
+
+  .description {
+    margin-top: 600px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  .browse {
+    background-image: url('assets/images/browse_medium.jpg');
+    height: 700px;
+  }
 }
 
+@media (max-width: 535px) {
+  
+  .main {
+    background-image: url('assets/images/main_small.jpg');
+    height: 500px;
+  }
+
+  /* EVERY API ONE PLACE */
+  .main p:nth-child(1){
+    font-size: 2.2em;
+    margin-top: 190px;
+  }
+
+  .main p:nth-child(2) {
+    text-align: center;
+  }
+  .description {
+    margin-top: 500px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .description p {
+    padding-left: 20px;
+    padding-right: 20px;
+  } 
+  .browse {
+    background-image: url('assets/images/browse_medium.jpg');
+    height: 500px;
+  }
+
+  .browse p:nth-child(1){
+    font-size: 2em;
+    padding-top: 180px;
+  }
+  /* browse the API catalog */
+  .browse p:nth-child(2){
+    font-size: 2em;
+    margin-top: 30px;
+  }
+
+}
 
