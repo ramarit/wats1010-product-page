@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- TODO: replace favicon, apple-touch-icon, and tile images to best
              support bookmarking. -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -48,14 +50,61 @@
                   <a href="#contact">Contact us</a>
                 </li>
                 <li>
-                  <a href="#comingSoon">Cart<span class="glyphicon glyphicon-shopping-cart"></span></a>
-                </li>  
+                  <!-- Trigger the modal with a button -->
+                  <a href="#" role="button" id="myBtn">Login</a> 
+                </li> 
+                <li>
+                  <a href="#comingSoon"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                </li>
               </ul> <!-- #nav-list -->
             </div> <!-- .collapse .navbar-collapse -->    
           </div> <!-- .container -->
         </nav>  <!-- #header-nav -->   
       </header>
 
+      <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header" style="padding:35px 50px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+              </div>
+              <div class="modal-body" style="padding:40px 50px;">
+                <form role="form">
+                <div class="form-group">
+                  <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                  <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                  <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="" checked>Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <p>Not a member? <a href="#">Sign Up</a></p>
+                <p>Forgot <a href="#">Password?</a></p>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <script>
+        $(document).ready(function(){
+          $("#myBtn").click(function(){
+            $("#myModal").modal();
+          });
+        });
+      </script>
       <!-- pop up screen -->
       <div id="comingSoon" class="overlay">
         <div class="popup">
@@ -79,8 +128,9 @@
       <div id="main-content" class="container-fluid">
         <div class="jumbotron"></div>
         <!-- main -->
+        <div class="main-image"></div>
         <div class="main">
-          <p>EVERY API <span>ONE PLACE</span>
+          <p>EVERY API <span>ONE PLACE</span></p>
           <p><a href="#comingSoon">Shop now</a></p>
         </div> <!-- End of .main -->
 
@@ -97,12 +147,11 @@
             <div class="how">
               <p>How it works<p>
               <p><a href="#comingSoon">Shop now</a></p>
-              <hr class="visible-xs visible-sm">
             </div>
           </div>
           <div class="col-md-8 col-sm-12 col-xs-12">
             <div class="video">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/L48g1ZWLMdo" frameborder="0" allowfullscreen></iframe>
+              <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/L48g1ZWLMdo" frameborder="0" allowfullscreen></iframe></div>
             </div>
           </div>
         </div> <!-- End of #video .row -->
@@ -112,8 +161,79 @@
           <p>Browse the API catalog</p>                
           <p><a href="#comingSoon">Shop now</a></p>
         </div> <!-- End of .browse -->
-          
+        
+        <div class="testimonial">  
+        <section id="carousel">           
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
+                <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+                  <!-- Carousel indicators -->
+                  <ol class="carousel-indicators">
+                  <li data-target="#fade-quote-carousel" data-slide-to="0"></li>
+                  <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+                  <li data-target="#fade-quote-carousel" data-slide-to="2" class="active"></li>
+                  <li data-target="#fade-quote-carousel" data-slide-to="3"></li>
+                  <li data-target="#fade-quote-carousel" data-slide-to="4"></li>
+                  <li data-target="#fade-quote-carousel" data-slide-to="5"></li>
+                  </ol>
+                  <!-- Carousel items -->
+                  <div class="carousel-inner">
+                    <div class="item">
+                      <!--<div class="profile-circle" style="background-color: rgba(0,0,0,.2);"></div>-->
+                      <blockquote>
+                        <p>"It really saves me time and effort. API Super Store is exactly what our business has been lacking. Just what I was looking for."</p>
+                        <p>- Corey E.</p>
+                      </blockquote> 
+                    </div>
+                    <div class="item">
+                      <!--<div class="profile-circle" style="background-color: rgba(77,5,51,.2);"></div>-->
+                      <blockquote>
+                        <p>"We're loving it. Since I invested in API Super Store I made over 100,000 dollars profits. I have gotten at least 50 times the value from API Super Store. I love API Super Store."</p>
+                        <p>- Sheilakathryn A.</p>
+                      </blockquote>
+                    </div>
+                    <div class="active item">
+                      <!--<div class="profile-circle" style="background-color: rgba(145,169,216,.2);"></div>-->
+                      <blockquote>
+                        <p>"API Super Store is awesome! It fits our needs perfectly. API Super Store is worth much more than I paid. API Super Store should be nominated for service of the year."</p>
+                        <p>- Bellina G.</p>
+                      </blockquote>
+                    </div>
+                    <div class="item">
+                      <!--<div class="profile-circle" style="background-color: rgba(77,5,51,.2);"></div>-->
+                        <blockquote>
+                          <p>"Definitely worth the investment. I would be lost without API Super Store."</p>
+                          <p>- Averill W.</p>
+                        </blockquote>
+                    </div>
+                    <div class="item">
+                      <!--<div class="profile-circle" style="background-color: rgba(77,5,51,.2);"></div>-->
+                      <blockquote>
+                        <p>"I have gotten at least 50 times the value from API Super Store. API Super Store did exactly what you said it does. It's incredible. You guys rock!"</p>
+                        <p>- Berty D.</p>
+                      </blockquote>
+                    </div>
+                    <div class="item">
+                      <!--<div class="profile-circle" style="background-color: rgba(77,5,51,.2);"></div>-->
+                      <blockquote>
+                        <p>"Needless to say we are extremely satisfied with the results. API Super Store did exactly what you said it does."</p>
+                        <p>- Isabel C.</p>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </section>
+        </div>
+
+
+
         <!-- testimonials -->
+        <!--
         <div id="testimonials" class="row">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <p>"It really saves me time and effort. API Super Store is exactly what our business has been lacking. Just what I was looking for."</p>
@@ -130,7 +250,7 @@
             <p>"API Super Store is awesome! It fits our needs perfectly. API Super Store is worth much more than I paid. API Super Store should be nominated for service of the year."</p>
             <p>- Bellina G.</p>
           </div>
-        </div> <!-- End of #testimonials .row -->
+        </div> --><!-- End of #testimonials .row -->
 
         <!-- features -->
         <div id="features" class="row">
@@ -184,10 +304,15 @@
         &copy; Copyright API Super Store 2016
       </div> <!-- End of .bottom -->
 
+       
+ 
+
+
       <!-- Needed for hamburger button to work -->
       <!-- jQuery (Bootstrap JS plugins depend on it) -->
-      <script src="js/jquery-2.1.4.min.js"></script>
+      <!--<script src="js/jquery-2.1.4.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
-      <script src="js/script.js"></script>
+      <script src="js/script.js"></script>-->
+
     </body>
 </html>
